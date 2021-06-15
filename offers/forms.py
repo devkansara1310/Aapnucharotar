@@ -1,14 +1,22 @@
-from django.urls import path
-from . import views
-from .views import OfferDetailView, AddofferView,UpdateOfferView, DeleteOffersView, cat_offer
+from django import forms
+from .models import offers
+from django.forms.widgets import NumberInput
 
-urlpatterns = [
-   path('', views.offers1, name='offers'),
-   path('category/<int:pk>', views.cat_offer, name='offer_cat'),
-   path('offer/<int:pk>', OfferDetailView.as_view(), name='offer_detail'),
-   path('add_offer/', views.AddofferView, name='add_offer'),
-   path('edit/<int:pk>', UpdateOfferView.as_view(), name='update_offer'),
-   path('delete/<int:pk>', DeleteOffersView.as_view(), name='delete_offer'),
-   # path('category/<int:id>', views.show, name='cat'),
-   # path('cat', views.listing_cat,name='cat'),
-]
+class OfferForm(forms.ModelForm):
+    class Meta:
+        model = offers
+        fields = '__all__'
+        labels = {
+            'name': 'Offer Name',
+            'code': 'Offer Code',
+            'end': 'End Date',
+            'Contact': 'Contanct No.',
+            'image': 'Image  ',
+        }
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Offer Name'}),
+            'email': forms.TextInput(attrs={'class': 'form-control','placeholder': 'xyz@gmail.com'}),
+            'end': forms.DateInput(format='%Y/%m/%d', attrs={'title': 'Search'}),
+            'status': forms.TextInput(attrs={'id': 'status', 'type': 'hidden'}),
+            'vendor1': forms.TextInput(attrs={'id': 'user', 'type': 'hidden'}),
+        }
