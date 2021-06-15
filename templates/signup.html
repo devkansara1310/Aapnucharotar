@@ -1,0 +1,45 @@
+{% extends 'basee.html' %}
+{% load static %}
+{% block content %}
+			<div class="container-fluid">
+			 <!-- Banner -->
+				<div class="row leftside">
+					<div class="messages text-center col-md-12">
+					Register Here !!
+					<hr>
+						<ul>
+							<li>
+								<div class="col-md-4 col-sm-6 col-xs-12 ">
+								  <div class="listing">
+							        <h3><a href="{% url 'customer_register'%}">User Registration</a><h3>
+							      </div>
+						        </div>
+							</li>
+						</ul>
+					</div>	
+<!--					<div class="col-md-4 col-sm-6 col-xs-12">-->
+<!--						<div class="listing">-->
+<!--							<h3><a href="{% url 'customer_register'%}">User Registration</a><h3>-->
+<!--						</div>-->
+<!--					</div>-->
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="listing">
+							<h3><a href="{% url 'blogger_register'%}">Blogger Registration</a><h3>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="listing">
+							<h3><a href="{% url 'vendor_register'%}">Vendor Registration</a><h3>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="listing">
+							<h3><a href="{% url 'lister_register'%}">Lister Registration</a><h3>
+						</div>
+					</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+	
+{% endblock %}

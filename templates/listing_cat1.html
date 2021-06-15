@@ -1,0 +1,27 @@
+{% extends 'basee.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+			 <!-- Banner -->
+				<div class="row leftside">
+					<div class="messages text-center col-md-12">
+					Listing
+					<hr>
+					</div>
+					{% for category in cat %}
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="listing">
+							<h3>{{category.category}}<h3>
+							<ul>
+								<li><a href="#">{{category.name}}</a></li>
+							</ul>
+						</div>
+					</div>
+					{% endfor %}
+					<div class="clearfix"></div>
+					</div>
+				</div>
+				  <!-- Banner Area-->
+
+{% endblock %}

@@ -1,0 +1,359 @@
+
+{% extends 'basee.html' %}
+{% load static %}
+
+{% block content %}
+
+		<div id="content-wrapper">
+			<div class="container-fluid">
+			 <!-- Banner -->
+				<div class="row">
+					<div class="advertisment-banner col-md-12">
+						<img src="{% static 'images/homepage/Ad_banner.jpg' %}" alt="" title="" >
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				  <!-- Banner Area-->
+	<div id="myBtnContainer">
+		<div class="col-md-10 p-left">
+            {% for category1 in offerscategories %}
+				<button class="btn" onclick="filterSelection('all')"><a class="text-dark" href="{% url 'offer_cat' category1.pk%}">{{category1.name}}</button>
+			{% endfor %}
+<!--			<button class="btn" onclick="filterSelection('Places')"> Places & Events</button>-->
+<!--			<button class="btn" onclick="filterSelection('Real')"> Real Estate</button>-->
+<!--			<button class="btn" onclick="filterSelection('Cars')"> Cars & Bikes</button>-->
+<!--			<button class="btn" onclick="filterSelection('Electronic')"> Electronic</button>-->
+<!--			<button class="btn" onclick="filterSelection('Others')"> Others</button>-->
+		</div>
+		<div class="text-right radar col-md-2 p-right">
+			<a href="radar.html"><img src="{% static 'images/icon/reader.png' %}" alt="reader">Radar Scan</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="tabby">
+		<div class="htitle col-md-6">
+		Latest Offer
+		</div>
+	<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+	</div>
+	<div class="clearfix"></div>
+	{% for offer1 in offer1 %}
+	<div class="filterDiv Places">
+	  <div class="col-md-3 col-xs-12 ">
+		<div class="box">
+			<div class="box-img">
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none;"><img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+			</div>
+			<div class="box-heading1">
+
+				<div class="box-heading2 text-dark">
+					<i class="fa fa-tag" aria-hidden="true"></i> &nbsp; {{offer1.Category}}
+				</div>
+			</div>
+
+			<div class="box-heading3 text-center" style="margin-left: 0px;">
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+		</div>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+</div>
+				  <!-- container Tab End -->
+				  <!-- container Recomanded End -->
+
+ <div class="clearfix"></div>
+
+<!--#Recommanded Start -->
+<div class="clearfix"></div>
+<div class="htitle col-md-6">
+	Recommanded
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#owl Slider End-->
+<!--#Doctors Start -->
+	<div class="htitle col-md-6">
+	Doctore
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#News end-->
+
+<!--#Hotels Start -->
+	<div class="htitle col-md-6">
+	Hotel
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#Hotels end-->
+
+<!--#Gym Start -->
+	<div class="htitle col-md-6">
+	Gym
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#Gyms end-->
+
+<!--#IT Company Start -->
+	<div class="htitle col-md-6">
+	IT Company
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#IT Company end-->
+
+	<div class="htitle col-md-6">
+	Hospitals
+</div>
+<div class="htitle text-right col-md-6">
+		<a href="#">Show More</a>
+</div>
+<section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            	{% for offer1 in offer1 %}
+			  <div class="item">
+              <div class="box">
+				<div class="box-img">
+					<img src="{{offer1.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</div>
+				<div class="box-heading1">
+
+					<div class="box-heading2 text-dark">
+						<i class="fa fa-tag" aria-hidden="true"></i> &nbsp;  {{offer1.Category}}
+					</div>
+				</div>
+				<div class="box-heading3 text-center mx-auto" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' offer1.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer1.name}}</a>
+			</div>
+			</div>
+            </div>
+			{% endfor %}
+          </div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--#event end-->
+
+
+   <!--#Spiner-->
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+   <!--#Spiner-->
+
+<!--				{% for x1 in x %}-->
+<!--				<img src="{{x1.image.url}}" >-->
+<!--				{% endfor %}-->
+	{% endblock %}
+
+<!--			&lt;!&ndash; Sticky Footer &ndash;&gt;-->
+<!--			<footer class="sticky-footer col-md-12">-->
+<!--			  <div class="container my-auto">-->
+<!--				<div class="copyright text-center my-auto">-->
+
+<!--				<div class="footer-info">-->
+<!--							<a href="#">About </a> |-->
+<!--							<a href="#">Faq’s </a> |-->
+<!--							<a href="#">Privacy</a>-->
+<!--							<a href="#"> Advertise</a>  |-->
+<!--							<a href="#">Term & Conditions </a>-->
+<!--							<a href="#">Sitemap  </a>|-->
+<!--							<a href="#">Tags  </a>|-->
+<!--							<a href="#">Blog</a>-->
+<!--						</div>-->
+<!--						<div class="copy-right">-->
+<!--						<a target="_blank" href="https://www.Aapnucharotar.com"> Aapnu Charotar </a>-->
+<!--						</div>-->
+<!--				</div>-->
+<!--			  </div>-->
+<!--			</footer>-->
+
+<!--		</div>-->
+<!--      &lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+<!--    </div>-->
+<!--	</div>-->
+<!--    &lt;!&ndash; /#wrapper &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Scroll to Top Button&ndash;&gt;-->
+<!--    <a class="scroll-to-top rounded" href="#page-top">-->
+<!--      <i class="fas fa-angle-up"></i>-->
+<!--    </a>-->
+
+<!--    &lt;!&ndash; Bootstrap core JavaScript&ndash;&gt;-->
+<!--    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>-->
+<!--    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Core plugin JavaScript&ndash;&gt;-->
+<!--    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>-->
+<!--   &lt;!&ndash; Page level plugin JavaScript&ndash;&gt;-->
+<!--    <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>-->
+<!--    <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>-->
+<!--    <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>-->
+<!--    &lt;!&ndash; Custom scripts for all pages&ndash;&gt;-->
+<!--    <script src="{% static 'js/sb-admin.min.js' %}"></script>-->
+<!--	 <script src="{% static 'js/portfolio.js' %}"></script>-->
+<!--	 <script src="{% static 'js/you-listing.js' %}"></script>-->
+<!--	 <script src="{% static 'js/menurght.js' %}"></script>-->
+<!--	 <script src="{% static 'js/crausal1.js' %}"></script>-->
+<!--	 <script src="{% static 'js/dropdown.js' %}"></script>-->
+<!--	     &lt;!&ndash; Demo scripts for this page&ndash;&gt;-->
+<!--   	<script src="{% static 'js/slick.min.js' %}"></script>.-->
+<!--	 &lt;!&ndash; Assect scripts for this page&ndash;&gt;-->
+<!--	<script src="{% static 'assets/vendors/jquery.min.js' %}"></script>-->
+<!--    <script src="{% static 'assets/owlcarousel/owl.carousel.js' %}"></script>-->
+<!--	 <script src="{% static 'assets/vendors/highlight.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/app.js' %}"></script>-->
+
+<!--  </body>-->
+
+
+<!--&lt;!&ndash;   15:44:08 GMT &ndash;&gt;-->
+<!--</html>-->

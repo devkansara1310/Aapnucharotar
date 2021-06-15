@@ -1,0 +1,70 @@
+{% extends 'basee.html' %}
+{% block content %}
+<form action="" class="post-form" method="post">
+    {% csrf_token %}
+
+        <br>
+        <div class="form-group row">
+            <label class=""></label>
+            <div class="">
+                <h3>Enter Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">Name :</label>
+            <div class="col-sm-5">
+                <input name="name" required type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">Email :</label>
+            <div class="col-sm-5">
+                <input name="email" required type="email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">Contact No. :</label>
+            <div class="col-sm-5">
+                <input name="cno" required type="number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">Address :</label>
+            <div class="col-sm-5">
+                <input name="address" required type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">City :</label>
+            <div class="col-sm-5">
+                <input name="city" required type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">pin:</label>
+            <div class="col-sm-5">
+                <input name="pin" required type="number" maxlength="6">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">State :</label>
+            <div class="col-sm-5">
+                <input name="state" required type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0">Amount :</label>
+            <div class="col-sm-5">
+                <input name="amount" required type="text" maxlength="5">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" style="line-height:0"></label>
+            <div class="col-sm-5">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}

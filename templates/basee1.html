@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--   15:40:28 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- Favicon -->
+	<link href="{% static 'images/header/fav.png' %}" rel="shortcut icon" type="image/x-icon"/>
+
+
+    <title>Aapnu Charotar </title>
+
+    <!-- Bootstrap core CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}" type="text/css">
+     <link rel="stylesheet" href="{% static 'css/dropdown.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owlslider.css' %}" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	 <link rel="stylesheet" href="{% static 'assets/owlcarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/owlcarousel/assets/owl.theme.default.min.css' %}">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Responsive NGO ( Non Profit Organization ) Template : GIVE HELP</title>
+    <!--  Bootstrap Style -->
+    <link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet" />
+    <!--  Font-Awesome Style -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!--  Pretty Photo Style -->
+    <link href="{% static 'css/prettyPhoto1.css' %}" rel="stylesheet" />
+    <!--  Google Font Style -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Nova+Flat' rel='stylesheet' type='text/css' />
+    <!--  Custom Style -->
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top sticky-top nav-menu">
+
+		<div class="col-md-2 col-xs-12 p-left  p-right">
+
+      <button  class="btn btn-link btn-sm text-white order-1 order-sm-0"  id="sidebarToggle" >
+        <i class="fas fa-bars"></i>
+      </button>
+		<div class="logo">
+			<a href="#">
+			<img src="{% static 'images/header/logo.png' %}" alt="logo" height="40px" width="140px">
+			</a>
+		</div>
+	</div>
+      <!-- Navbar -->
+		<div class="col-md-5 col-xs-12 p-left  p-right"></div>
+			<div class="col-md-5 col-xs-12 p-left p-right">
+			 <div class="add-listing">
+				<a href="upload.html">
+				<img src="{% static 'images/header/plus-ico.png' %}" alt="">
+				Add Listing</a>
+			 </div>
+
+			 <div class="login popup"  onclick="signin()">
+
+				<img src="{% static 'images/header/u-icon.png' %}" title="" alt="">
+				{% if user.is_authenticated %} {{user.first_name}} {% else %} <a href="{% url 'login' %}">login {% endif %}
+				<div class="popuptext1" id="signin">
+				<div class="notfication-details">
+					<div class="notification-info">
+						<a href="my_profile_account.html" >Profile </a>
+					</div>
+				</div>
+				<div class="notfication-details">
+					<div class="notification-info">
+						<a href="my_profile_dashboard.html">Dashboard</a>
+					</div>
+				</div>
+				<div class="notfication-details">
+					<div class="notification-info">
+						<a href="my_profile_view_detail.html">Profile Detail</a>
+					</div>
+				</div>
+				<div class="notfication-details">
+					<div class="notification-info">
+						<a href="signin.html" >Sign In</a>
+					</div><!--notification-info -->
+				</div>
+			 </div>
+		</div>
+	</div>
+    </nav>
+    <div id="wrapper">
+      <!-- Sidebar -->
+		  <ul class="sidebar navbar-nav">
+			<li class="nav-item active">
+			<a href="{% url 'blog' %}"><img src="{% static 'images/menu-icon/Homeicon.png' %}" title="" alt=""> <div class="fos" id="foo">Home</div></a></li>
+			<li><a href="{% url 'listing' %}"><img src="{% static 'images/menu-icon/Categoryicon.png' %}" title="" alt=""><div class="fos" id="foo1"> Listing </div> </a></li>
+			<li><a href="{% url 'blog' %}"><img src="{% static 'images/menu-icon/flag.png' %}" title="" alt=""> <div class="fos" id="foo2"> Blogs</div></a></li>
+
+			<!-- <li class="mpadding"><a href="message.html"><img src="images/menu-icon/message.png" title="" alt=""><div class="fos" id="foo3"> Messages</div></a></li> -->
+			<li><a><img><div></div></a></li>
+			<li><a href="{% url 'offers' %}"> <img src="{% static 'images/menu-icon/eye.png' %}" title="" alt=""><div class="fos" id="foo4">Offers</div></a></li>
+			<li> <a href="{% url 'donation1' %}"> <img src="{% static 'images/menu-icon/favicon.png' %}" title="" alt=""><div class="fos" id="foo5">Donations</div></a></li>
+			<li><a><img><div></div></a></li>
+			<li><a><img><div></div></a></li>
+			<!-- <li> <a href="electronics.html"><img src="images/menu-icon/Shape.png" title="" alt=""><div class="fos" id="foo6">Liked</div></a></li>
+			<li class="mpadding"><a href="other_user.html"><img src="images/menu-icon/card-payment.png" title="" alt=""> <div class="fos" id="foo7">Payment</div></a></li> -->
+
+			<li> <a href="{% url 'login' %}"><img src="{% static 'images/menu-icon/user.png' %}" title="" alt=""><div class="fos" id="foo8">Login</div></a></li>
+			<li> <a href="{% url 'customer_register' %}"><img src="{% static 'images/menu-icon/setting.png' %}" title="" alt=""><div class="fos" id="foo9">Register</div></a></li>
+			<li class="mpadding"><a href="feedback.html"><img src="{% static 'images/menu-icon/info.png' %}" title="" alt=""><div class="fos" id="foo10"> Send Feedback</div></a></li>
+
+			<li><a><img><div></div></a></li>
+			<li><a><img><div></div></a></li>
+			<li> <a href="{% url 'logout' %}"><img src="{% static 'images/menu-icon/user.png' %}" title="" alt=""><div class="fos" id="foo8">Logout</div></a></li>
+		  </ul>
+
+        {% block content %}
+
+        {% endblock %}

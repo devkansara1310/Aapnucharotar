@@ -1,0 +1,197 @@
+{% extends 'basee1.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div id="main-head">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-3 col-sm-12">
+
+
+                    <h2>RAISE FUNDS</h2>
+                    <h5>We have raised fund of  </h5>
+                    <span><strong><i class="fa fa-inr"></i> 3,10,345 </strong></span>
+                    <h5>but for this year we require</h5>
+                    <span><strong><i class="fa fa-inr"></i> 3,90,000 </strong></span>
+
+                        <br>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <a href="{% url 'donation' %}"> <button class="btn btn-style-1 btn-lg ">DONATE NOW</button></a>
+                        </div>
+
+
+
+
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+
+                                <img src="{% static 'images/slider/1.jpg' %}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'images/slider/2.jpg' %}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'images/slider/3.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <!--INDICATORS-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-slider" data-slide-to="1"></li>
+                            <li data-target="#carousel-slider" data-slide-to="2"></li>
+                        </ol>
+                        <!--PREVIUS-NEXT BUTTONS-->
+                        <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                            <i class="fa fa-angle-left fa-2x control-icon main-color"></i>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                            <i class="fa fa-angle-right fa-2x control-icon main-color"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="about">
+        <div class="container" style="margin-bottom:30px;">
+            <div class="text-center" data-scroll-reveal="enter from the bottom after .3s">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                    <h2 style="color:black;">ABOUT GIVE HELP </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-lg-4 col-md-4 hover-color" data-scroll-reveal="enter from the left after .6s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-medkit fa-5x  icon-round "></i>
+
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Cancer Care</h3>
+                            <p>
+                                9.6 million people die from cancer every year. India ranks third in cancer cases after China and the US. This makes cancer the second most common cause of death in India
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4" data-scroll-reveal="enter from the bottom after .9s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa  fa-female fa-5x  icon-round"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Women's </h3>
+                            <p>
+                                50% of women in India now believe that the violence inflicted by their partner is 'normal'. Donate to help women fight against violence and stand for their rights and live a dignified and self-sustainable life.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4" data-scroll-reveal="enter from the right after .6s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-bank fa-5x  icon-round  "></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Old Age Home</h3>
+                            <p>
+                                Close to 18 million elderly in India are homeless. Senior citizens living in poverty face abandonment by their own families as they cannot earn an income.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Donar list-->
+        <div class="reviews-section">
+
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 ">
+                        <h2>DONATOR LIST</h2>
+                        <div id="reviews" class="carousel slide" data-ride="carousel">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#reviews" data-slide-to="0" class=""></li>
+                                <li data-target="#reviews" data-slide-to="1" class=""></li>
+                                <li data-target="#reviews" data-slide-to="2" class="active"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <div class="container center">
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 slide-custom">
+
+                                            <h4><i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. <i class="fa fa-quote-right"></i></h4>
+
+                                            <h5 class="pull-right"><strong class="c-black">Lorem Dolor</strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="container center">
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 slide-custom">
+                                            <h4><i class="fa fa-quote-left"></i>Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc. <i class="fa fa-quote-right"></i></h4>
+
+                                            <h5 class="pull-right"><strong class="c-black">Faucibus luctus</strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item active">
+                                    <div class="container center">
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 slide-custom">
+                                            <h4><i class="fa fa-quote-left"></i>Sed ultricies, libero ut  fringilla, ante elit luctus lorem, a egestas dui metus a arcu condimentum. <i class="fa fa-quote-right"></i></h4>
+
+                                            <h5 class="pull-right"><strong class="c-black">Sed ultricies</strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            doner list-->
+
+    </div>
+    <!--./ REVIEWS SECTION END -->
+    </div>
+
+    <!--./ ABOUT SECTION END -->
+    </div>
+
+    <!--./ MAIN HEADER SECTION END -->
+
+    <!--  Jquery Core Script -->
+    <script src="{% static 'js/jquery-1.10.21.js' %}"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="{% static 'js/bootstrap1.js' %}"></script>
+    <!--  Scrolling Script -->
+    <script src="{% static 'js/jquery.easing.min1.js' %}"></script>
+    <!--  PrettyPhoto Script -->
+    <script src="{% static 'js/jquery.prettyPhoto1.js' %}"></script>
+    <!--  knob Scripts -->
+    <script src="{% static 'js/jquery.knob1.js' %}"></script>
+     <!--  SCROLL REVEAL Scripts -->
+    <script src="{% static 'js/scrollReveal1.js' %}"></script>
+    <!--  Custom Scripts -->
+    <script src="{% static 'js/custom1.js' %}"></script>
+    <script>
+
+    </script>
+{% endblock %}
+</body>
+</html>

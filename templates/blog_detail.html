@@ -1,0 +1,275 @@
+{% extends 'basee.html' %}
+{% load static %}
+
+{% block content %}
+
+		<div id="content-wrapper">
+			<div class="container-fluid">
+			 <!-- Banner -->
+				<div class="dashboard" style="margin-bottom: 35px;">
+					<div class="advertisment-banner1 col-md-12">
+						<img src="{{post.image.url}}" alt="" title="" height="300px" width="200px">
+					</div>
+					<div class="main-page">
+<!--						<div class=" dash-profile">-->
+<!--							<img src="{% static 'images/banner/h-dp.jpg' %}" alt=""> Blogs-->
+<!--						</div>-->
+						<div class="prompr">
+<!--							<ul class="widths">-->
+<!--								<li class="number"><i></i></li>-->
+<!--								<li class="number"><i></i></li>-->
+<!--								<li class="number"><i clapss="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp; {{post.category}}</li>-->
+<!--								<li class="number"><i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp; {{post.sub_category}}</li>-->
+<!--								<li class="saved">-->
+<!--									<i class="fa fa-heart-o" aria-hidden="true"></i>-->
+<!--									<a href="#">saved</a>-->
+<!--								</li>-->
+
+								<!-- <li class="borders"><i class="fa fa-share-alt" aria-hidden="true"></i></li>
+								<li class="borders"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li> -->
+<!--							</ul>-->
+<!--							<div class="Author">-->
+<!--								<a href="#">Messages to Author</a>-->
+<!--							</div>-->
+<!--							<div class="promote">-->
+<!--								<a href="#">Promote</a>-->
+<!--							</div> &ndash;&gt;-->
+						</div>
+					</div>
+						<div class="clearfix">
+						</div>
+				</div>
+				  <!-- Banner Area-->
+			  <div class="settingmenu">
+				<div class="navbar navbar-expand-md navbar-light">
+					<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+					<span class="navbar-toggler-icon "></span>
+					</button>
+				<div class="collapse navbar-collapse  visible-title" id="navbarNav">
+				 <ul class="navbar-nav ">
+				<li></li>
+				<li>
+				<a></a>
+				</li>
+				<li>
+				<a href="resturent_post_review.html"></a>
+				</li>
+				<li>
+				<a href="gallery.html"></a>
+				</li>
+				<li>
+					<a><br><h2>{{post.title}}</h2></br></a>
+				</li>
+
+				</ul>
+
+				</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<div class="box-left">
+						<div class="rightboxs">
+							<i class="fa fa-flag" aria-hidden="true"></i>
+							<span>Name</span>
+							<p>{{post.title}}</br>
+
+							</p>
+						</div>
+					</div>
+					<div class="box-left">
+						<div class="rightboxs">
+							<i class="fa fa-info" aria-hidden="true"></i>
+							<span>Description </span>
+							<p>{{post.description}}</br>
+
+							</p>
+						</div>
+					</div>
+					<div class="box-left">
+						<div class="rightboxs">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+							<span>Posted Date - Time </span>
+							<p>{{post.date}}</br>
+
+							</p>
+						</div>
+					</div>
+					<div class="box-left">
+						<div class="rightboxs">
+							<i class="fa fa-comment" aria-hidden="true"></i>
+							<span>Comments </span>
+							<p>
+							{% if not post.comments.all %}
+									No Comments yet <a href="{% url 'add_comment' post.pk %}">Add One</a>
+							{% else %}
+								{% for comment in post.comments.all %}
+									{{ comment.name }} - {{ comment.date }}
+									<br/>
+									{{comment.body}}
+									<br/>
+									<br/>
+								{% endfor %}
+								<a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+							{% endif %}
+							</p>
+						</div>
+					</div>
+
+<!--					<div class="locatins heading">-->
+
+<!--							<div class="rightboxs">-->
+<!--								<img src="{% static 'images/banner/Icon9.png' %}" alt="">-->
+<!--								<span>Phone No.</span>-->
+<!--								<p>{{post.cno}}</p>-->
+<!--							</div>-->
+
+<!--						&lt;!&ndash; open map &ndash;&gt;-->
+<!--						&lt;!&ndash; <div class="map">-->
+<!--							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109552.36514741898!2d75.78663299443437!3d30.900326335681108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837462345a7d%3A0x681102348ec60610!2sLudhiana%2C+Punjab!5e0!3m2!1sen!2sin!4v1542822206775" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+<!--						</div> &ndash;&gt;-->
+<!--						 &lt;!&ndash; close map  &ndash;&gt;-->
+<!--						<div class="clearfix"></div>-->
+<!--					</div>-->
+<!--					<div class="locatins heading">-->
+<!--						<img src="{% static 'images/banner/Icon3.png' %}" alt="">-->
+<!--						<h3>-->
+<!--						Location-->
+<!--						</h3>-->
+<!--					</br>-->
+<!--						<p>{{post.address}}</br>-->
+<!--							 {{post.city}} - {{post.pin}}-->
+<!-- 							</p>-->
+<!--						&lt;!&ndash; <div class="tag">-->
+<!--							<a href="#">Credit</a>-->
+<!--							<a href="#">Wifi</a>-->
+<!--							<a href="#">Parking</a>-->
+<!--						</div> &ndash;&gt;-->
+<!--						<div class="clearfix"></div>-->
+<!--					</div>-->
+				</div>
+				<div class="col-md-5">
+					<div class="box-left">
+						<div class="rightboxs">
+							<img src="{% static 'images/banner/Icon6.png' %}" alt="">
+							<span>Categories</span>
+							<p>{{post.category}}</p>
+						</div>
+					</div>
+
+					<div class="box-left">
+						<div class="rightboxs">
+							<img src="{% static 'images/banner/Icon6.png' %}" alt="">
+							<span>Sub Category</span>
+							<p>{{post.sub_category}}</p>
+						</div>
+					</div>
+					<div class="box-left">
+						<div class="rightboxs">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<span>Author</span>
+							<p>{{post.author}}</p>
+						</div>
+					</div>
+<!--					<div class="box-left">-->
+<!--						<div class="rightboxs">-->
+<!--							<img src="{% static 'images/banner/Icon9.png' %}" alt="">-->
+<!--							<span>Region</span>-->
+<!--							<p>India</p>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="box-left">-->
+<!--						<div class="rightboxs">-->
+<!--							<img src="{% static 'images/banner/Icon4.png' %}" alt="">-->
+<!--							<span>Lister Name</span>-->
+<!--							<p><a href="#">{{post.lister_name}} </a></p>-->
+<!--						</div>-->
+<!--					</div>-->
+					<div class="box-left">
+						<div class="rightboxs">
+						<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+							<span>Like</span>
+							<p>
+								<form action="{% url 'like_post' post.pk%}" method="POST">
+								{% csrf_token %}
+									<button type="submit" name="post_id" value="{{post.id}}" class="btn btn-primary"> Like </button> - {{total_likes}} Likes
+								{% if  user.is_customer %}
+								</form>
+								{% else %}
+								<p><a href="{% url 'login' %}"> Login to Give Like </a></p>
+								{% endif %}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div class="clearfix"></div>
+   <!--#Spiner
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+   <!--#Spiner-->
+{% endblock %}
+
+<!--			&lt;!&ndash; Sticky Footer &ndash;&gt;-->
+<!--			<footer class="sticky-footer col-md-12">-->
+<!--			  <div class="container my-auto">-->
+<!--				<div class="copyright text-center my-auto">-->
+<!--				 -->
+<!--				<div class="footer-info">-->
+<!--							<a href="#">About </a> | -->
+<!--							<a href="#">Faq’s </a> | -->
+<!--							<a href="#">Privacy</a>-->
+<!--							<a href="#"> Advertise</a>  | -->
+<!--							<a href="#">Term & Conditions </a>-->
+<!--							<a href="#">Sitemap  </a>| -->
+<!--							<a href="#">Tags  </a>| -->
+<!--							<a href="#">Blog</a>-->
+<!--						</div>-->
+<!--						<div class="copy-right">-->
+<!--						<a target="_blank" href="https://www.templateshub.net">Templates Hub</a>-->
+<!--						</div>-->
+<!--				</div>-->
+<!--			  </div>-->
+<!--			</footer>-->
+
+<!--		</div>-->
+<!--      &lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+<!--    </div>-->
+<!--	</div>-->
+<!--    &lt;!&ndash; /#wrapper &ndash;&gt;-->
+<!--	-->
+<!--    &lt;!&ndash; Scroll to Top Button&ndash;&gt;-->
+<!--    <a class="scroll-to-top rounded" href="#page-top">-->
+<!--      <i class="fas fa-angle-up"></i>-->
+<!--    </a>-->
+
+<!--    &lt;!&ndash; Bootstrap core JavaScript&ndash;&gt;-->
+<!--    <script src="vendor/jquery/jquery.min.js"></script>-->
+<!--    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!--    &lt;!&ndash; Core plugin JavaScript&ndash;&gt;-->
+<!--    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+<!--   &lt;!&ndash; Page level plugin JavaScript&ndash;&gt;-->
+<!--    <script src="vendor/chart.js/Chart.min.js"></script>-->
+<!--    <script src="vendor/datatables/jquery.dataTables.js"></script>-->
+<!--    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>-->
+<!--    &lt;!&ndash; Custom scripts for all pages&ndash;&gt;-->
+<!--    <script src="js/sb-admin.min.js"></script>-->
+<!--		  <script src="js/you-listing.js"></script>-->
+<!--	  <script src="js/menurght.js"></script>-->
+<!--    &lt;!&ndash; Demo scripts for this page&ndash;&gt;-->
+<!--  	<script src="js/slick.min.js"></script>.-->
+<!--	 &lt;!&ndash; Assect scripts for this page&ndash;&gt;-->
+<!--	<script src="assets/vendors/jquery.min.js"></script>-->
+<!--    <script src="assets/owlcarousel/owl.carousel.js"></script>-->
+<!--	 <script src="assets/vendors/highlight.js"></script>-->
+<!--    <script src="assets/js/app.js"></script>-->
+<!--	-->
+<!--  </body>-->
+
+
+<!--&lt;!&ndash; historical_place15:58:52 GMT &ndash;&gt;-->
+<!--</html>-->

@@ -1,0 +1,209 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+	<!--banner-starts-->
+	<div class="banner">
+		<div class="container">
+			<!-- <div class="banner-top">
+				<div class="banner-text">
+					<h2>Aliquam erat</h2>
+					<h1>Suspendisse potenti</h1>
+					<div class="banner-btn">
+						<a href="single.html">Read More</a>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<!--banner-end-->
+	<!--about-starts-->
+	<div class="about">
+		<div class="container">
+			<div class="about-main">
+				<div class="col-md-8 about-left">
+					{% for post in posts %}
+					<div class="about-tre">
+						<div class="a-1">
+							<div class="col-md-1"></div>
+							<div class="col-md-9 abt-left">
+								<a href="single.html"><img src="{{ post.image.url}}" alt="" height="300px" width="150px"/></a>
+								<h6>{{post.category}}</h6>
+								<h3><a href="single.html">{{post.title}}</a></h3>
+								<p>{{post.description}}</p>
+								<label>{{post.date}}</label>
+							</div>
+<!--							<div class="col-md-6 abt-left">-->
+<!--								<a href="single.html"><img src="{% static 'images/c-4.jpg' %}" alt="" /></a>-->
+<!--								<h6>Find The Most</h6>-->
+<!--								<h3><a href="single.html">{{x1.title}}</a></h3>-->
+<!--								<p>Vivamus interdum diam diam, non faucibus tortor consequat vitae. Proin sit amet augue sed massa pellentesque viverra. Suspendisse iaculis purus eget est pretium aliquam ut sed diam.</p>-->
+<!--								<label>May 29, 2015</label>-->
+<!--							</div>-->
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="col-md-4 about-right heading">
+					<div class="abt-1">
+						<h3>ADVERTISEMENT</h3>
+						<div class="abt-one">
+							<img src="{% static 'images/c-2.jpg' %}" alt="" />
+							<p>Quisque non tellus vitae mauris luctus aliquam sit amet id velit. Mauris ut dapibus nulla, a dictum neque.</p>
+							<div class="a-btn">
+								<a href="single.html">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="abt-2">
+						<h3>YOU MIGHT ALSO LIKE</h3>
+							{% for post in object_list %}
+							<div class="might-grid">
+								<div class="grid-might">
+									<a href="single.html"><img src="{% static 'images/c-12.jpg' %}" class="img-responsive" alt=""> </a>
+								</div>
+								<div class="might-top">
+									<h4><a href="single.html">{{post.title}}</a></h4>
+									<p>{{post.description}}</p>
+								</div>
+								<div class="clearfix"></div>
+							{% endfor %}
+							</div>
+<!--							<div class="might-grid">-->
+<!--								<div class="grid-might">-->
+<!--									<a href="single.html"><img src="{% static 'images/c-10.jpg' %}" class="img-responsive" alt=""> </a>-->
+<!--								</div>-->
+<!--								<div class="might-top">-->
+<!--									<h4><a href="single.html">Duis consectetur gravida</a></h4>-->
+<!--									<p> Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.</p>-->
+<!--								</div>-->
+<!--								<div class="clearfix"></div>-->
+<!--							</div>-->
+<!--							<div class="might-grid">-->
+<!--								<div class="grid-might">-->
+<!--									<a href="single.html"><img src="{% static 'images/c-11.jpg' %}" class="img-responsive" alt=""> </a>-->
+<!--								</div>-->
+<!--								<div class="might-top">-->
+<!--									<h4><a href="single.html">Duis consectetur gravida</a></h4>-->
+<!--									<p> Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.</p>-->
+<!--								</div>-->
+<!--								<div class="clearfix"></div>-->
+<!--							</div>-->
+					</div>
+					<div class="abt-2">
+						<h3>ARCHIVES</h3>
+						<ul>
+							{% for post in object_list %}
+							<li><a href="single.html">{{post.title}}</a></li>
+							{% endfor %}
+
+						</ul>
+					</div>
+					<div class="abt-2">
+						<h3>NEWS LETTER</h3>
+						<div class="news">
+							<form>
+								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" />
+								<input type="submit" value="Subscribe">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--about-end-->
+	<!--slide-starts-->
+	<div class="slide">
+		<div class="container">
+			<div class="fle-xsel">
+			<ul id="flexiselDemo3">
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-1.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-2.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-3.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-4.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-5.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="banner-1">
+							<img src="{% static 'images/s-6.jpg' %}" class="img-responsive" alt="">
+						</div>
+					</a>
+				</li>
+			</ul>
+
+<!--							 <script type="text/javascript">-->
+<!--								$(window).load(function() {-->
+
+<!--									$("#flexiselDemo3").flexisel({-->
+<!--										visibleItems: 5,-->
+<!--										animationSpeed: 1000,-->
+<!--										autoPlay: true,-->
+<!--										autoPlaySpeed: 3000,-->
+<!--										pauseOnHover: true,-->
+<!--										enableResponsiveBreakpoints: true,-->
+<!--										responsiveBreakpoints: {-->
+<!--											portrait: {-->
+<!--												changePoint:480,-->
+<!--												visibleItems: 2-->
+<!--											},-->
+<!--											landscape: {-->
+<!--												changePoint:640,-->
+<!--												visibleItems: 3-->
+<!--											},-->
+<!--											tablet: {-->
+<!--												changePoint:768,-->
+<!--												visibleItems: 3-->
+<!--											}-->
+<!--										}-->
+<!--									});-->
+
+<!--								});-->
+<!--								</script>-->
+<!--								<script type="text/javascript" src="js/jquery.flexisel.js"></script>-->
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+</body>
+</html>

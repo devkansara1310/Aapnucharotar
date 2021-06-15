@@ -1,0 +1,69 @@
+
+{% extends 'basee.html' %}
+{% load static %}
+
+{% block content %}
+
+		<div id="content-wrapper">
+			<div class="container-fluid">
+			 <!-- Banner -->
+				<div class="row">
+					<div class="advertisment-banner col-md-12">
+						<img src="{% static 'images/homepage/Ad_banner.jpg' %}" alt="" title="" >
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				  <!-- Banner Area-->
+	<div id="myBtnContainer">
+		<div class="col-md-10 p-left">
+			{% for category in ocategories %}
+			<button class="btn" onclick="filterSelection('all')"><a class="text-dark" href="{% url 'offer_cat' category.pk %}" >{{category.name}}</a></button>
+<!--			<button class="btn" onclick="filterSelection('Places')"> Places & Events</button>-->
+<!--			<button class="btn" onclick="filterSelection('Real')"> Real Estate</button>-->
+<!--			<button class="btn" onclick="filterSelection('Cars')"> Cars & Bikes</button>-->
+<!--			<button class="btn" onclick="filterSelection('Electronic')"> Electronic</button>-->
+<!--			<button class="btn" onclick="filterSelection('Others')"> Others</button>-->
+			{% endfor %}
+		</div>
+		<div class="text-right radar col-md-2 p-right">
+			<a href="radar.html"><img src="{% static 'images/icon/reader.png' %}" alt="reader">Aapnu Charotar</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="tabby">
+		<div class="col-md-6"></div>
+		<div class="htitle col-md-6">
+			{% for offer in offer %}
+				{% if forloop.first %}
+					<h4>{{offer.Category}}</h4>
+    			{%endif%}
+			{% endfor %}
+		</div>
+
+	<div class="clearfix"></div>
+	{% for post in offer %}
+	<div class="filterDiv Places">
+	  <div class="col-md-3 col-xs-12 ">
+		<div class="box">
+			<div class="box-img">
+				<a href="{% url 'offer_detail' post.pk %}" style="text-decorations:none;"><img src="{{post.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+				</a>
+			</div>
+			<div class="box-heading1">
+<!--				<a href="{% url 'blog_detail' post.pk %}" style="text-decorations:none;">{{post.title}}</a>-->
+				<div class="box-heading2">
+				<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; {{post.Category}}
+				</div>
+			</div>
+
+			<div class="box-heading3 text-center" style="margin-left: 0px;" >
+				<a href="{% url 'offer_detail' post.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{post.name}}</a>
+			</div>
+		</div>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

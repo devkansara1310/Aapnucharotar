@@ -1,0 +1,61 @@
+{% extends 'basee.html' %}
+{% load static %}
+{% block content %}
+		{% if user.is_blogger %}
+			<h3>{{x}}</h3>
+				<div id="content-wrapper">
+			<div class="container-fluid">
+				<div class="upload_listing">
+			 <!-- Banner -->
+					<div class="row">
+						<div class="messages text-center col-md-12">
+							Blog
+						<p>Submit a Blog</p>
+						<hr>
+						</div>
+						<div class="feedback col-md-10">
+							<div class="email-input">
+								  <div class="form-floating">
+									  <div class="loga1">
+								   		<div class="midemail">
+									     <div class="working2">
+										   <form method="POST" enctype="multipart/form-data">
+											{% 	csrf_token %}
+											{{ form.media }}
+											{{ form.as_p }}
+											   <div class="sends">
+												   </br></br></br>
+											<input type="submit" value="send">
+											   </div>
+											</form>
+								         </div>
+										</div>
+									  </div>
+								  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+
+		{% elif user.is_customer %}
+		<div class="text-center">
+			<h1> You are not Authorized to view this Page </h1>
+		</div>
+
+		{% elif user.is_vendor %}
+		<div class="text-center">
+			<h1> You are not Authorized to view this Page </h1>
+		</div>
+		{% endif %}
+
+<script>
+	var name = "{{ user.id }}";
+	document.getElementById("user").value = name;
+
+	var name2 = "d";
+	document.getElementById("status").value = name2;
+</script>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% load widget_tweaks %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<!-- signin15:54:02 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" e="description" nam>
+    <meta content="" name="author">
+    <!-- Favicon -->
+    <link href="{% static 'images/header/logo.png' %}" rel="shortcut icon" type="image/x-icon"/>
+    <link href="{% static 'images/header/logo.png' %}" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>login </title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="{% static 'css/portfolio.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/owlslider.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/owlcarousel/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="sign">
+    <div class="container">
+        <div class="row">
+            <div class="bg-form">
+                <div class="sinheader">
+                    <div class="col-md-6">
+                        <img alt="" height="30" src="{% static 'images/header/logo.png' %}" width="50">
+                    </div>
+                    <div class="sings col-md-6">
+                        <a href="{% url 'customer_register' %}">Sign up here</a> &nbsp;
+                        <i aria-hidden="true" class="fa fa-long-arrow-right"></i>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                    <div class="sform">
+                        <h1>Sign in</h1>
+                        <span>Hello there! Sign in and start managing your item.</span>
+                        <form action="{% url 'login' %}" method="POST" novalidate>
+                            {% csrf_token %}
+                            {% for field in form.visible_fields %}
+                            <div class="form-group">
+                                {{ field.label_tag | linebreaks }}
+                                {% render_field field class="form-control" %}
+                                {% if messages%}
+                                {% for message in messages %}
+                                <span style="color:red">{{ message }}</span>
+                                {% endfor %}
+                                {% endif %}
+                                {% endfor %}
+                                <br>
+                                <input class="btn btn-block btn-primary" type="submit" value="Login">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Core plugin JavaScript-->
+</body>
+
+
+<!-- signin15:54:03 GMT -->
+</html>

@@ -1,0 +1,144 @@
+
+{% extends 'basee.html' %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	{% if user.is_blogger %}
+	<div id="content-wrapper">
+		<div class="tabby">
+			<div class="htitle col-md-6">
+			Your Blogs
+			</div>
+		</div>
+		<div class="htitle text-right col-md-6">
+			<a href="#">Show More</a>
+		</div>
+		<div class="clearfix"></div>
+		{% for post in posts %}
+		 {% if user.id == post.author.id %}
+		   <div class="filterDiv Places">
+		  <div class="col-md-3 col-xs-12 ">
+			<div class="box">
+				<div class="box-img">
+					<a href="{% url 'blog_detail' post.pk %}" style="text-decorations:none;"><img src="{{post.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+					</a>
+				</div>
+				<div class="box-heading1">
+	<!--				<a href="{% url 'blog_detail' post.pk %}" style="text-decorations:none;">{{post.title}}</a>-->
+					<div class="box-heading2">
+						<i class="fa fa-empire" aria-hidden="true"></i> &nbsp; {{post.category}}
+					</div>
+				</div>
+
+				<div class="box-heading3 text-center" style="margin-left: 0px; height: auto" >
+					<a href="{% url 'blog_detail' post.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{post.title}}</a>
+					<br/>
+					<br/>
+					<br/>
+					<a href="{% url 'update_post' post.pk %}"><button class="btn btn-primary">Edit  </button></a>
+					<a href="{% url 'delete_post' post.pk %}"><button class="btn btn-primary" style="margin-left:30px">Delete</button></a>
+				</div>
+
+			</div>
+			</div>
+		</div>
+		 {% endif %}
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	{% if user.is_lister %}
+	<div id="content-wrapper">
+		<div class="tabby">
+			<div class="htitle col-md-6">
+			Your Listing
+			</div>
+		</div>
+		<div class="htitle text-right col-md-6">
+			<a href="#">Show More</a>
+		</div>
+		<div class="clearfix"></div>
+		{% for listing in listing1 %}
+		 {% if user.id == listing.lister.id %}
+		   <div class="filterDiv Places">
+		  <div class="col-md-3 col-xs-12 ">
+			<div class="box">
+				<div class="box-img">
+					<a href="{% url 'list_detail' listing.pk %}" style="text-decorations:none;"><img src="{{listing.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+					</a>
+				</div>
+				<div class="box-heading1">
+					<div class="box-heading2">
+						<i class="fa fa-empire" aria-hidden="true"></i> &nbsp; {{listing.category}}
+					</div>
+				</div>
+
+				<div class="box-heading3 text-center" style="margin-left: 0px; height: auto" >
+					<a href="{% url 'list_detail' listing.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{listing.title}}</a>
+					<br/>
+					<br/>
+					<br/>
+					<a href="{% url 'update_listing' listing.pk %}"><button class="btn btn-primary">Edit  </button></a>
+					<a href="{% url 'delete_listing' listing.pk %}"><button class="btn btn-primary" style="margin-left:30px">Delete</button></a>
+				</div>
+
+			</div>
+			</div>
+		</div>
+		 {% endif %}
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	{% if user.is_vendor %}
+	<div id="content-wrapper">
+		<div class="tabby">
+			<div class="htitle col-md-6">
+			Your Offer
+			</div>
+		</div>
+		<div class="htitle text-right col-md-6">
+			<a href="#">Show More</a>
+		</div>
+		<div class="clearfix"></div>
+		{% for offer in offer1 %}
+		 {% if user.id == offer.vendor1.id %}
+		<div class="filterDiv Places">
+			  <div class="col-md-3 col-xs-12 ">
+				<div class="box">
+					<div class="box-img">
+						<a href="{% url 'offer_detail' offer.pk %}" style="text-decorations:none;"><img src="{{offer.image.url}}" class="img" alt="" title="" height="200px" width="200px">
+						</a>
+					</div>
+					<div class="box-heading1">
+						<div class="box-heading2">
+							<span style="background-color: black;">
+							<i class="fa fa-empire" aria-hidden="true"></i> &nbsp; {{offer.Category}} &nbsp;
+							</span>
+						</div>
+					</div>
+
+					<div class="box-heading3 text-center" style="margin-left: 0px; height: auto" >
+						<a href="{% url 'offer_detail' offer.pk %}" style="text-decorations:none; color: #343357; font-weight: 900; ">{{offer.name}}</a>
+						<br/>
+						<br/>
+						<br/>
+						<a href="{% url 'update_offer' offer.pk %}"><button class="btn btn-primary">Edit  </button></a>
+						<a href="{% url 'delete_offer' offer.pk %}"><button class="btn btn-primary" style="margin-left:30px">Delete</button></a>
+					</div>
+
+				</div>
+			  </div>
+		</div>
+		 {% endif %}
+		{% endfor %}
+		<div class="clearfix"></div>
+
+	</div>
+	{% endif %}
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends 'basee.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_lister %}
+				<div id="content-wrapper">
+			<div class="container-fluid">
+				<div class="upload_listing">
+			 <!-- Banner -->
+					<div class="row">
+						<div class="messages text-center col-md-12">
+							Listing
+						<p>Edit a Listing</p>
+						<hr>
+						</div>
+						<div class="feedback col-md-10">
+							<div class="email-input">
+								  <div class="form-floating">
+									  <div class="loga1">
+								   		<div class="midemail">
+									     <div class="working2">
+										   <form method="POST" enctype="multipart/form-data">
+											{% 	csrf_token %}
+											{{ form.media }}
+											{{ form.as_p }}
+											   <div class="sends">
+												   </br></br></br>
+											<input type="submit" value="Update">
+											   </div>
+											</form>
+								         </div>
+										</div>
+									  </div>
+								  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+{% else %}
+<h1> You are not authorized to View this Page... </h1>
+{% endif %}
+{% endblock %}

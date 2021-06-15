@@ -1,0 +1,17 @@
+
+{%extends 'basee.html' %}
+ {% block content%}
+<h1>Delete Offer</h1>
+<br/>
+<h3>Delete: {{offers.name}}</h3>
+<br>
+<div class="form-control">
+<form method="post">
+{% csrf_token %}
+     <strong>Are you sure ?</strong><br><br>
+      <button class="btn btn-dark">Delete</button>
+</form>
+</div>
+{%endblock%}
+</body>
+</html>
